@@ -1,1 +1,1 @@
-"use strict";var number=30;console.log("modal");
+"use strict";var slider_hero=new Swiper(".slide-principal",{effect:"fade"});
