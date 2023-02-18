@@ -1,13 +1,27 @@
 .s-hero {
+    position: relative;
     .slide-principal {
         width: 100%;
         height: 73.6rem;
         .swiper-wrapper {
             .swiper-slide {
+                width: 100%;
+                height: 100%;
                 padding-top: 20.7rem;
                 &.slide-01 {
                   background: url(../img/banner-slide-01.jpg) no-repeat center center;
                 }
+                &.slide-02 {
+                    background: url(../img/banner-slide-02.jpg) no-repeat center center;
+                    background-size: cover;
+                }
+                &.slide-03 {
+                    background: url(../img/banner-slide-03.jpg) no-repeat center center;
+                    background-size: cover;
+                    .left-content {
+                        max-width: 62.6rem;
+                    }
+                  }
                 .container {
                     display: flex;
                     align-items: flex-start;
@@ -40,6 +54,7 @@
                 .right-content {
                     width: 100%;
                     max-width: 29.2rem;
+                    margin-top: -3.4rem;
                     .logo {
                         width: 100%;
                         max-width: 28rem;
@@ -63,9 +78,12 @@
                             margin-bottom: 1.6rem;
                         }
                         .btn-video {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
                             position: relative;
                             width: 100%;
-                            height: 17.3rem;
+                            height: 15.8rem;
                             border-radius: 0.4rem;
                             overflow: hidden;
                             .thumb {
@@ -91,10 +109,45 @@
                                     opacity: 0;
                                 }
                             }
+                            .icon {
+                                position: relative;
+                                z-index: 1;
+                                width: 5.1rem;
+                                height: 5.1rem;
+                                border-radius: 50%;
+                                background: linear-gradient(136.72deg, rgba(7, 7, 10, 0.86) 19.22%, rgba(15, 16, 22, 0.5) 76.59%);
+                                backdrop-filter: blur(1.5px);
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                            }
                         }
                     }
                 }
              }
+        }
+    }
+    .slide-thumb {
+        position: absolute;
+        top: 24.1rem;
+        left: 16%;
+        z-index: 2;
+        height: 32rem;
+        .swiper-wrapper {
+            .swiper-slide {
+                width: 4.8rem;
+                height: 4.8rem;
+                cursor: pointer;
+                opacity: 0.4;
+                filter: grayscale(100);
+                &.disabled {
+                    pointer-events: none;
+                }
+                &-thumb-active {
+                    opacity: 1;
+                    filter: grayscale(0);
+                }
+            }
         }
     }
 }
