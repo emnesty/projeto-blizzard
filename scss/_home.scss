@@ -158,6 +158,7 @@
         display: flex;
         align-items: flex-end;
         justify-content: space-between;
+        margin-bottom: 7.8rem;
         .left-top {
             display: flex;
             align-items: flex-start;
@@ -191,7 +192,20 @@
             ul {
                 display: flex;
                 align-items: center;
-                gap: 2.4rem
+                gap: 2.4rem;
+                li {
+                    a {
+                        img {
+                            opacity: 0.5;
+                            transition: opacity 0.3s;
+                        }
+                        &.active {
+                            img {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
             }
             .btn-all-games {
                 display: flex;
@@ -205,5 +219,50 @@
                 }
             }
         }
+    }
+    .tab-games-content {
+        .tab-pane-games {
+            display: none;
+            &.active {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-gap: 4.7rem 3.2rem;
+                animation: fadeUp .4s forwards;
+            }
+            .card-all-games {
+                width: 100%;
+                height: 38.4rem;
+                max-width: 28rem;
+                border: 1.5px solid #212428;
+                border-radius: 4px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                span {
+                    display: flex;
+                    align-items: center;
+                    margin-top: 3.4rem;
+                    font-size: 1.6rem;
+                    font-weight: 600;
+                    line-height: 2.4rem;
+                    color: #FFFFFF;
+                    img {
+                        margin-right: 1.3rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes fadeUp {
+    from  {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
