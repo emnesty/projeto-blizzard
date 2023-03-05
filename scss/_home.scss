@@ -1,5 +1,6 @@
 .s-hero {
     position: relative;
+    z-index: 2;
     .slide-principal {
         width: 100%;
         height: 73.6rem;
@@ -352,6 +353,16 @@
     }
 }
 
+.show-modal {
+    .modal {
+        opacity: 1;
+        pointer-events: all;
+        .box {
+            transform: translateY(0px);
+        }
+    }
+}
+
 .modal {
     position: fixed;
     top: 0;
@@ -362,6 +373,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s;
     .overlay {
         position: fixed;
         width: 100%;
@@ -386,6 +400,13 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        transform: translateY(50px);
+        transition: transform .3s;
+        .close {
+            position: absolute;
+            top:2.4rem;
+            right: 2.4rem;
+        }
         .logo {
             margin-bottom: 4rem;
             width: 16.6rem;
@@ -412,6 +433,68 @@
                     &::placeholder {
                         opacity: 0.6;
                     }
+                }
+                button {
+                    width: 100%;
+                    line-height: 5.2rem;
+                    justify-content: center;
+                    font-weight: 600;
+                    font-size: 1.6rem;
+                }
+            }
+        }
+        .others-conect {
+            margin-bottom: 3.5rem;
+            p {
+                text-align: center;
+                font-weight: 500;
+                font-size: 1.4rem;
+                line-height: 2.1rem;
+                text-align: center;
+                color: #FFFFFF;
+                margin-bottom: 1.6rem;
+            }
+            ul {
+                display: flex;
+                li {
+                    &:not(:first-child) {
+                        margin-left: 1.6rem;
+                    }
+                    button {
+                        width: 4.8rem;
+                        height: 4.8rem;
+                        background-color: #FFFFFF;
+                        border-radius: 0.4rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+        .message-user {
+            p {
+                text-align: center;
+                font-weight: 500;
+                font-size: 1.6rem;
+                line-height: 2.4rem;
+                color: #FFFFFF;
+                margin-bottom: 1.6rem;
+                a {
+                    display: inline-block;
+                }
+            }
+            a {
+                font-weight: 500;
+                font-size: 1.6rem;
+                line-height: 2.4rem;
+                text-decoration-line: underline;
+                color: $primary-default;
+                text-align: center;
+                display: block;
+                transition: color .3s;
+                &:hover {
+                    color: #FFFFFF;
                 }
             }
         }
